@@ -1,4 +1,3 @@
-/* jshint node: true */
 'use strict';
 var DeployPluginBase = require('ember-cli-deploy-plugin');
 var GCS = require('./lib/gcs');
@@ -12,6 +11,7 @@ module.exports = {
       name: options.name,
       GCS: GCS,
 
+      // eslint-disable-next-line ember/avoid-leaking-state-in-ember-objects
       defaultConfig: {
         filePattern: 'index.html',
         prefix: '',
@@ -29,6 +29,7 @@ module.exports = {
         allowOverwrite: false
       },
 
+      // eslint-disable-next-line ember/avoid-leaking-state-in-ember-objects
       requiredConfig: ['bucket', 'projectId'],
 
       upload: function(/* context */) {
